@@ -1,0 +1,22 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: api-gateway
+#RabbitMQ配置
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+#服务注册中心地址配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+#Zuul路由匹配
+zuul:
+  routes:
+    user-service:
+      path: /user/**
+      serviceId: user-service
