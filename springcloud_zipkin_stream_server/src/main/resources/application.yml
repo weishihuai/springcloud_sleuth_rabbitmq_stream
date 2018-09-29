@@ -9,6 +9,19 @@ spring:
     username: guest
     password: guest
     host: localhost
+#数据库配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sleuth_zipkin_mysql?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: wsh0905
+#当前程序不使用sleuth
+  sleuth:
+    enabled: false
+#表示zipkin数据存储方式是mysql
+zipkin:
+  storage:
+    type: mysql
 #服务注册中心地址配置
 eureka:
   client:
